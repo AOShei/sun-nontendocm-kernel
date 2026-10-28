@@ -555,6 +555,9 @@ config BLK_DEV_RBD
 
 	  If unsure, say N.
 config BLK_SUNXI_NAND
-	bool "sunxi nand flash driver support"
+	tristate "sunxi nand flash driver support"
+	help
+	  As a module (nand.ko), hakchi's boot ramdisk loads it itself, so the console can
+	  boot from memory without touching the NAND.
 
 endif # BLK_DEV
